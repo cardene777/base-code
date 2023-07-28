@@ -14,8 +14,8 @@ describe("testing for RoyaltyNft", () => {
   beforeEach(async () => {
     const RoyaltyNftFactory = (await ethers.getContractFactory(
       "RoyaltyNftTest"
-    )) as RoyaltyNft__factory;
-    contract = (await RoyaltyNftFactory.deploy("MyNFT", "MNFT"));
+    )) as RoyaltyNftTest__factory;
+    contract = (await RoyaltyNftFactory.deploy("RoyalNft", "RNFT")) as RoyaltyNftTest;
     // await contract.deployed();
 
     const signers = await ethers.getSigners();
@@ -28,8 +28,8 @@ describe("testing for RoyaltyNft", () => {
     const name = await contract.name();
     const symbol = await contract.symbol();
 
-    expect(name).to.equal("MyNFT");
-    expect(symbol).to.equal("MNFT");
+    expect(name).to.equal("RoyalNft");
+    expect(symbol).to.equal("RNFT");
   });
 
   it("should support ERC721 interface", async () => {
@@ -50,9 +50,9 @@ describe("testing for RoyaltyNft", () => {
 
   it("should set default royalty correctly", async () => {
     const receiver = addr1.address;
-    const feeNumerator = ethers.parseEther("750"); // 7.5% royalty
-    const fixedFeeNumerator = ethers.FixedNumber.fromString("500"); // 5% royalty
-    const divNum = ethers.FixedNumber.fromString("10000");
+    const feeNumerator = BigInt(1000); // 10% royalty
+    const divNum = BigInt(10000);
+
 
     await contract.setDefaultRoyaltyForTest(receiver, feeNumerator);
 
@@ -66,19 +66,15 @@ describe("testing for RoyaltyNft", () => {
     );
 
     expect(royaltyReceiver).to.equal(receiver);
-    expect(royaltyAmount).to.equal(
-      fixedSalePrice.mul(fixedFeeNumerator).div(divNum)
-    );
+    expect(royaltyAmount).to.equal((salePrice * feeNumerator) / divNum);
   });
 
   it("should set token royalty correctly", async () => {
       const receiver = addr1.address;
-      const feeNumerator = ethers.parseEther("750"); // 7.5% royalty
-      const fixedFeeNumerator = ethers.FixedNumber.fromString("750"); // 7.5% royalty
-      const divNum = ethers.FixedNumber.fromString("10000");
+      const feeNumerator = BigInt(1000); // 10% royalty
+      const divNum = BigInt(10000);
 
     const tokenId = 1;
-      const fixedSalePrice = ethers.FixedNumber.fromString("1");
       const salePrice = ethers.parseEther("1");
 
     await contract.setTokenRoyaltyForTest(tokenId, receiver, feeNumerator);
@@ -89,19 +85,15 @@ describe("testing for RoyaltyNft", () => {
     );
 
     expect(royaltyReceiver).to.equal(receiver);
-    expect(royaltyAmount).to.equal(
-      fixedSalePrice.mul(fixedFeeNumerator).div(divNum)
-    );
+    expect(royaltyAmount).to.equal(salePrice * feeNumerator / divNum);
   });
 
   it("should reset token royalty correctly", async () => {
     const receiver = addr1.address;
-    const feeNumerator = ethers.parseEther("0.0000000000007.5"); // 7.5% royalty
-    const fixedFeeNumerator = ethers.FixedNumber.fromString("750"); // 7.5% royalty
-    const divNum = ethers.FixedNumber.fromString("10000");
+    const feeNumerator = BigInt(1000); // 10% royalty
+    const divNum = BigInt(10000);
 
     const tokenId = 1;
-    const fixedSalePrice = ethers.FixedNumber.fromString("1");
     const salePrice = ethers.parseEther("1");
 
     await contract.setTokenRoyaltyForTest(tokenId, receiver,feeNumerator);
@@ -112,9 +104,7 @@ describe("testing for RoyaltyNft", () => {
     );
 
     expect(royaltyReceiver).to.equal(receiver);
-    expect(royaltyAmount).to.equal(
-      fixedSalePrice.mul(fixedFeeNumerator).div(divNum)
-    );
+    expect(royaltyAmount).to.equal(salePrice * feeNumerator / divNum);
 
     await contract.resetTokenRoyaltyForTest(tokenId);
 
