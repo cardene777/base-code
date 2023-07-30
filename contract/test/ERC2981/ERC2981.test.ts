@@ -1,6 +1,5 @@
 import { ethers } from "hardhat";
 import { expect } from "chai";
-import { BigNumber } from "@ethersproject/bignumber";
 import "@nomicfoundation/hardhat-chai-matchers";
 import { RoyaltyNftTest, RoyaltyNftTest__factory } from "../../types";
 
