@@ -8,13 +8,6 @@ let guard: any;
 let addr1: any;
 let addr2: any;
 
-const twoDays = 2 * 24 * 60 * 60;
-
-const setTime = async (time: number) => {
-  await ethers.provider.send("evm_setNextBlockTimestamp", [time + twoDays]);
-  await ethers.provider.send("evm_mine", []);
-};
-
 describe("ERC6147Test", () => {
   let erc6147: ERC6147Test;
   let tokenId: number;
