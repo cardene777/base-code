@@ -1,3 +1,9 @@
+## ERC1363
+
+```sh
+npx hardhat test test/ERC1363/ERC1363.test.ts
+```
+
 ## ERC2981
 
 ```sh
