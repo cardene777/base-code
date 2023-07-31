@@ -7,7 +7,7 @@ import { Sample } from "../types";
 let owner: any;
 let addr1;
 let addr2;
-let initialOwnerBalance: BigNumber;
+let initialOwnerBalance: bigint;
 
 describe('testing for ERC20', async () => {
   let contract: Sample;

@@ -7,7 +7,7 @@ import { Sample } from "../types";
 let owner: any;
 let addr1;
 let addr2;
-let initialOwnerBalance: BigNumber;
+let initialOwnerBalance: bigint;
 
 const decimals = BigNumber.from(10).pow(18);
 const mintAmount = BigNumber.from(1e9).mul(decimals);
