@@ -22,6 +22,11 @@
 - [UniswapV2Router02](./UniswapV2Router02/README.md)
 - [UniswapV2Router02 DeCipher](https://app.bunzz.dev/decipher/chains/1/addresses/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)
 
+### 5. Deploy UniswapV2Migrator
+
+- [UniswapV2Migrator](./UniswapV2Migrator/README.md)
+- [UniswapV2Migrator DeCipher](https://app.bunzz.dev/decipher/chains/1/addresses/0x16d4f26c15f3658ec65b1126ff27dd3df2a2996b)
+
 ## Contract Address
 
 ### Sepolia
