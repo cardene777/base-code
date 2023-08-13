@@ -5,7 +5,19 @@
 ## Clone
 
 ```sh
-npx bunzz clone 1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+git clone git@github.com:cardene777/base-code.git
+```
+
+## Change Directory
+
+```sh
+cd Bunzz/contract/UniswapV2/UniswapV2Router02/
+```
+
+## Module
+
+```sh
+npm install
 ```
 
 ## Compile
