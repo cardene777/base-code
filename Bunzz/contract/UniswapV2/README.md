@@ -26,4 +26,4 @@
 ## Reference
 
 - [how_to_deploy_uniswap](https://github.com/second-state/how_to_deploy_uniswap)
-  - how_to_deploy_uniswap/uniswap_v2/deploy_uniswap_v2.js](https://github.com/second-state/how_to_deploy_uniswap/blob/master/uniswap_v2/deploy_uniswap_v2.js)
+  - [how_to_deploy_uniswap/uniswap_v2/deploy_uniswap_v2.js](https://github.com/second-state/how_to_deploy_uniswap/blob/master/uniswap_v2/deploy_uniswap_v2.js)
