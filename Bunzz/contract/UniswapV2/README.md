@@ -22,6 +22,14 @@
 - [UniswapV2Router02](./UniswapV2Router02/README.md)
 - [UniswapV2Router02 DeCipher](https://app.bunzz.dev/decipher/chains/1/addresses/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)
 
+## Contract Address
+
+| Contract | Address |
+| -------- | ------- |
+| UniswapV2Factory | 0x249f2CC78bDc6E4bA68E237DCC30C291aF575A09 |
+| UniswapV2Router02 | 0xcE894d7595c2C5cA1A5Db971239558c5d7142703 |
+| WETH | 0x664aA5273306a66a0534Ee3B39812F42aA28d638 |
+| UniswapRouter02 | 0x77D5Daff41710f3bC7Af31b7A3dF4d09C6EB5c18 |
 
 ## Reference
 
