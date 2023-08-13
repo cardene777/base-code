@@ -28,6 +28,12 @@ npx hardhat compile
 
 ## Deploy
 
+- `scripts/deploy.ts`内の以下の2つの変数を適切なものに書き換えてください。
+  - factoryAddress
+    - UniswapV2Factoryのコントラクトアドレス。
+  - WETHAddress
+    - WETHのコントラクトアドレス。
+
 ```sh
 npx hardhat run --network sepolia scripts/deploy.ts
 ```
